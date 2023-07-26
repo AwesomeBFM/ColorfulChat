@@ -1,0 +1,21 @@
+name: ColorfulChat
+version: '${project.version}'
+main: dev.awesomebfm.colorfulchat.ColorfulChat
+api-version: 1.20
+authors: [ AwesomeBFM ]
+description: Minecraft Spigot plugin that allows players to set their chat color!
+permissions:
+  colorfulchat.change:
+    description: Allows the player to change their chat color.
+    default: true
+  colorfulchat.custom:
+    description: Allows the player to use & codes in their messages;
+    default: op
+commands:
+  chatcolor:
+    aliases:
+      - cc
+    description: Allows the player to change their chat color.
+    usage: /cc [color]
+    permission: colorfulchat.change
+    permission-message: You do not have permission to use this command.
