@@ -3,12 +3,12 @@
 Chat color plugin for Spigot/Paper
 
 ## Get The Plugin
-The plugin is available for free on [Modrinth](https://modrinth.com/colorful-chat). There is a SpigotMC version, but it is no longer being updated due to not earning ad revenue there.
+The plugin is available for free on [Modrinth](https://modrinth.com/colorful-chat). There is a SpigotMC version, but it is no longer being updated.
 
 ## Features
 - Easy to use GUI with all Minecraft Colors
-- Each player gets to chose their own color
-- No complex setups or configs, just plug and play
+- Each player gets to choose their own color
+- No complex setups or configs, just plug-and-play
 - Works with a majority of chat formatters
 
 ## Usage
@@ -32,17 +32,7 @@ change your color to that color
 - `chatcolor.custom` - Allows a player to use `&` codes in their messages
 
 ## Tested Chat Formatters
-As long as your chat formatter is not modifying the chat message
-everything should work just fine. I did test the plugin using
-Vault prefixes, suffixes and such, and it worked as expected.
+As long as your chat formatter is not doing anything wacky it should prove no problem whatsoever. I tested it with VaultChatFormatter and it works just fine!.
 
 ## Bugs
-I am a solo developer who is in no way a professional programmer,
-as such there are likely to be a lot of bugs that slipped through.
-If you do find any bugs please make a report in our Discord server or on our GitHub Issues. Also, before you make a bug report make sure you are
-running the latest version of the plugin.
-
-## Connect
-Have ideas for the plugin? Want to see something custom? Have bugs?
-Join our Discord server: `https://discord.gg/nkprMbwu5e`. To contact me personally
-you can find me on Discord as `awesomebfm`.
+Please use the GitHub Issue Tracker.
