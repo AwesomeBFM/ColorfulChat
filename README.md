@@ -2,6 +2,8 @@
 
 Chat color plugin for Spigot/Paper
 
+![Banner Image](Header.png)
+
 ## Get The Plugin
 The plugin is available for free on [Modrinth](https://modrinth.com/plugin/colorful-chat). There is a SpigotMC version, but it is no longer being updated.
 
