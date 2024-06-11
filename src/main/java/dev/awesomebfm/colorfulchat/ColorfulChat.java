@@ -4,7 +4,9 @@ import dev.awesomebfm.colorfulchat.command.ChatColorCommand;
 import dev.awesomebfm.colorfulchat.listener.ChatListener;
 import dev.awesomebfm.colorfulchat.listener.JoinListener;
 import me.kodysimpson.simpapi.menu.MenuManager;
+import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
+import org.bukkit.command.PluginCommand;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class ColorfulChat extends JavaPlugin {
@@ -26,7 +28,13 @@ public final class ColorfulChat extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new JoinListener(this), this);
         getServer().getPluginManager().registerEvents(new ChatListener(this), this);
 
-        getCommand("chatcolor").setExecutor(new ChatColorCommand(this));
+        PluginCommand command = getCommand("chatcolor");
+        if (command == null) {
+            Bukkit.getLogger().severe("Could not load commands! Please report at https://github.com/AwesomeBFM/ColorfulChat/issues");
+            return;
+        }
+        command.setExecutor(new ChatColorCommand(this));
+
 
     }
 
