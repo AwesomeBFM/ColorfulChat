@@ -39,7 +39,7 @@ public class JoinListener implements Listener {
             if (player.hasPermission(COLOR_CODES_PERMISSION)) {
                 player.sendMessage(PREFIX +
                         ChatColor.YELLOW + "You also are able to use color codes in chat! Use them like " +
-                        ChatColor.GREEN + "&a&lthis" + ChatColor.YELLOW + " to get " + ChatColor.GREEN + "" + ChatColor.BOLD + "this" + ChatColor.YELLOW + "!");
+                        ChatColor.GREEN + "&b&lthis" + ChatColor.YELLOW + " to get " + ChatColor.AQUA + "" + ChatColor.BOLD + "this" + ChatColor.YELLOW + "!");
             }
         }
     }
