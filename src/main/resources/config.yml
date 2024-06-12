@@ -1,1 +1,4 @@
 default-color: 'GRAY'
+
+# On startup the plugin will check Modrinth for updates and inform you via the console if updates are available.
+enable-update-checker: true

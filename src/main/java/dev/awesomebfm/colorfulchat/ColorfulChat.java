@@ -58,18 +58,19 @@ public final class ColorfulChat extends JavaPlugin {
         command.setExecutor(new ChatColorCommand(this));
 
         // Run updater
-        Updater updater = new Updater("2.0.1");
-        try {
-            if (updater.shouldUpdate()) {
-                Bukkit.getLogger().log(Level.WARNING, "A newer version of Colorful Chat is available! Head over " +
-                        "to https://modrinth.com/plugin/colorful-chat/versions get the latest features, bug fixes, " +
-                        "and enhancements!");
+        if (getConfig().getBoolean("updater")) {
+            Updater updater = new Updater("2.0.1");
+            try {
+                if (updater.shouldUpdate()) {
+                    Bukkit.getLogger().log(Level.WARNING, "A newer version of Colorful Chat is available! Head over " +
+                            "to https://modrinth.com/plugin/colorful-chat/versions get the latest features, bug fixes, " +
+                            "and enhancements!");
+                }
+            } catch (IOException e) {
+                Bukkit.getLogger().log(Level.INFO, "Failed to run updater for unknown reason, newer version could be " +
+                        "available. Check https://modrinth.com/plugin/colorful-chat/versions for more info!");
             }
-        } catch (IOException e) {
-            Bukkit.getLogger().log(Level.INFO, "Failed to run updater for unknown reason, newer version could be " +
-                    "available. Check https://modrinth.com/plugin/colorful-chat/versions for more info!");
         }
-
 
     }
 
