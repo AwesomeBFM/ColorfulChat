@@ -19,7 +19,6 @@ package dev.awesomebfm.colorfulchat;
 import dev.awesomebfm.colorfulchat.command.ChatColorCommand;
 import dev.awesomebfm.colorfulchat.listener.ChatListener;
 import dev.awesomebfm.colorfulchat.listener.JoinListener;
-import me.kodysimpson.simpapi.menu.MenuManager;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.PluginCommand;
