@@ -17,6 +17,7 @@
 package dev.awesomebfm.colorfulchat.command;
 
 import dev.awesomebfm.colorfulchat.ColorfulChat;
+import dev.awesomebfm.colorfulchat.menu.ColorGui;
 import org.bukkit.ChatColor;
 import org.bukkit.NamespacedKey;
 import org.bukkit.command.Command;
@@ -43,7 +44,7 @@ public class ChatColorCommand implements CommandExecutor {
         }
 
         if (args.length < 1) {
-            p.sendMessage(PREFIX + ChatColor.RED + "ERROR: Please specify a color!");
+            new ColorGui(p).open();
             return true;
         }
 
@@ -70,7 +71,7 @@ public class ChatColorCommand implements CommandExecutor {
             case "yellow" -> data.set(key, PersistentDataType.STRING, "YELLOW");
             case "white" -> data.set(key, PersistentDataType.STRING, "WHITE");
             default -> {
-                p.sendMessage(PREFIX + ChatColor.RED + "ERROR: Could not understand color!");
+                new ColorGui(p).open();
                 return true;
             }
         }
