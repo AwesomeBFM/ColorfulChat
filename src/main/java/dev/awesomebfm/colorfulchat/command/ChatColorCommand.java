@@ -17,10 +17,6 @@
 package dev.awesomebfm.colorfulchat.command;
 
 import dev.awesomebfm.colorfulchat.ColorfulChat;
-import dev.awesomebfm.colorfulchat.menu.ColorMenu;
-import me.kodysimpson.simpapi.exceptions.MenuManagerException;
-import me.kodysimpson.simpapi.exceptions.MenuManagerNotSetupException;
-import me.kodysimpson.simpapi.menu.MenuManager;
 import org.bukkit.ChatColor;
 import org.bukkit.NamespacedKey;
 import org.bukkit.command.Command;
