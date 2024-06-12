@@ -1,7 +1,9 @@
 package dev.awesomebfm.colorfulchat;
 
 import com.google.common.reflect.TypeToken;
+import com.google.gson.FieldNamingPolicy;
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -28,7 +30,6 @@ public class Updater {
             boolean featured
     ){}
 
-    // TODO: Work In Progress needs to be tested
     private List<Version> getVersions() throws IOException {
         URL url = URI.create("https://api.modrinth.com/v2/project/OvVrnX0V/version").toURL();
         HttpURLConnection con = (HttpURLConnection) url.openConnection();
@@ -48,12 +49,11 @@ public class Updater {
         }
         in.close();
 
-        Gson gson = new Gson();
+        Gson gson = new GsonBuilder().setFieldNamingStrategy(FieldNamingPolicy.LOWER_CASE_WITH_UNDERSCORES).create();
         Type type = new TypeToken<List<Version>>(){}.getType();
         return gson.fromJson(content.toString(), type);
     }
 
-    // TODO: Work In Progress needs to be tested
     public boolean shouldUpdate() throws IOException {
         List<Version> versions = getVersions();
 
