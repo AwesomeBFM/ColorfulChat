@@ -35,13 +35,15 @@ public final class ColorfulChat extends JavaPlugin {
     public void onEnable() {
         instance = this;
 
+        // Load config
         saveDefaultConfig();
-
         defaultColor = ChatColor.valueOf(getConfig().getString("default-color"));
 
+        // Register listeners
         getServer().getPluginManager().registerEvents(new JoinListener(this), this);
         getServer().getPluginManager().registerEvents(new ChatListener(this), this);
 
+        // Register commands
         PluginCommand command = getCommand("chatcolor");
         if (command == null) {
             Bukkit.getLogger().severe("Could not load commands! Please report at https://github.com/AwesomeBFM/ColorfulChat/issues");
