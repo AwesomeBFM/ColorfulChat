@@ -37,7 +37,6 @@ public final class ColorfulChat extends JavaPlugin {
         instance = this;
 
         saveDefaultConfig();
-        MenuManager.setup(getServer(), this);
 
         defaultColor = ChatColor.valueOf(getConfig().getString("default-color"));
 

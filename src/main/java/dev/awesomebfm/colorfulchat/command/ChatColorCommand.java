@@ -47,11 +47,7 @@ public class ChatColorCommand implements CommandExecutor {
         }
 
         if (args.length < 1) {
-            try {
-                MenuManager.openMenu(ColorMenu.class, p);
-            } catch (MenuManagerException | MenuManagerNotSetupException e) {
-                p.sendMessage(PREFIX + ChatColor.RED + "ERROR: Something went wrong while opening the menu!");
-            }
+            p.sendMessage(PREFIX + ChatColor.RED + "ERROR: Please specify a color!");
             return true;
         }
 
@@ -73,15 +69,12 @@ public class ChatColorCommand implements CommandExecutor {
             case "green" -> data.set(key, PersistentDataType.STRING, "GREEN");
             case "aqua" -> data.set(key, PersistentDataType.STRING, "AQUA");
             case "red" -> data.set(key, PersistentDataType.STRING, "RED");
-            case "pink" -> data.set(key, PersistentDataType.STRING, "LIGHT_PURPLE"); // 'pink' is not available in ChatColor, using LIGHT_PURPLE instead
+            case "pink" ->
+                    data.set(key, PersistentDataType.STRING, "LIGHT_PURPLE"); // 'pink' is not available in ChatColor, using LIGHT_PURPLE instead
             case "yellow" -> data.set(key, PersistentDataType.STRING, "YELLOW");
             case "white" -> data.set(key, PersistentDataType.STRING, "WHITE");
             default -> {
-                try {
-                    MenuManager.openMenu(ColorMenu.class, p);
-                } catch (MenuManagerException | MenuManagerNotSetupException e) {
-                    p.sendMessage(PREFIX + ChatColor.RED + "ERROR: Something went wrong while opening the menu!");
-                }
+                p.sendMessage(PREFIX + ChatColor.RED + "ERROR: Could not understand color!");
                 return true;
             }
         }
