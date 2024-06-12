@@ -25,6 +25,9 @@ import org.bukkit.ChatColor;
 import org.bukkit.command.PluginCommand;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import java.io.IOException;
+import java.util.logging.Level;
+
 public final class ColorfulChat extends JavaPlugin {
     private static final String PREFIX = ChatColor.translateAlternateColorCodes('&', "&8[&cC&6o&el&ao&9r&5f&cu&6l&eC&ah&9a&5t&8] ");
 
@@ -36,20 +39,36 @@ public final class ColorfulChat extends JavaPlugin {
     public void onEnable() {
         instance = this;
 
+        // Load config
         saveDefaultConfig();
+        defaultColor = ChatColor.valueOf(getConfig().getString("default-color"));
+        // Setup menu manager
         MenuManager.setup(getServer(), this);
 
-        defaultColor = ChatColor.valueOf(getConfig().getString("default-color"));
-
+        // Register listeners
         getServer().getPluginManager().registerEvents(new JoinListener(this), this);
         getServer().getPluginManager().registerEvents(new ChatListener(this), this);
 
+        // Register commands
         PluginCommand command = getCommand("chatcolor");
         if (command == null) {
             Bukkit.getLogger().severe("Could not load commands! Please report at https://github.com/AwesomeBFM/ColorfulChat/issues");
             return;
         }
         command.setExecutor(new ChatColorCommand(this));
+
+        // Run updater
+        Updater updater = new Updater("2.0.1");
+        try {
+            if (updater.shouldUpdate()) {
+                Bukkit.getLogger().log(Level.WARNING, "A newer version of Colorful Chat is available! Head over " +
+                        "to https://modrinth.com/plugin/colorful-chat/versions get the latest features, bug fixes, " +
+                        "and enhancements!");
+            }
+        } catch (IOException e) {
+            Bukkit.getLogger().log(Level.INFO, "Failed to run updater for unknown reason, newer version could be " +
+                    "available. Check https://modrinth.com/plugin/colorful-chat/versions for more info!");
+        }
 
 
     }
