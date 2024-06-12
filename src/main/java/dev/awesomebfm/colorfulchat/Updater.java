@@ -14,10 +14,10 @@ import java.util.List;
 
 public class Updater {
 
-    private final String CURRENT_VERSION;
+    private final String currentVersion;
 
     public Updater(String currentVersion) {
-        CURRENT_VERSION = currentVersion;
+        this.currentVersion = currentVersion;
     }
 
     record Version (
@@ -61,7 +61,7 @@ public class Updater {
                 .filter(v -> v.featured)
                 .findFirst().orElseThrow();
 
-        return latest.versionNumber != null && !latest.versionNumber.equals(CURRENT_VERSION);
+        return latest.versionNumber != null && !latest.versionNumber.equals(currentVersion);
     }
 
 }
