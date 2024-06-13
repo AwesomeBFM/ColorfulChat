@@ -28,7 +28,11 @@ public class ColorGui extends Gui {
         PersistentDataContainer data = event.getPlayer().getPersistentDataContainer();
 
 
-        addItem(0, new Icon(Material.CYAN_CONCRETE).setName(ChatColor.AQUA + "Aqua").onClick(e -> {
+        // Aqua
+        addItem(0, new Icon(Material.CYAN_CONCRETE).setName(ChatColor.AQUA + "Aqua").setLore(List.of(
+                "",
+                ChatColor.YELLOW + "Click to change to " + ChatColor.AQUA + "aqua" + ChatColor.YELLOW + "!"
+        )).onClick(e -> {
             data.set(new NamespacedKey(instance, "chatcolor"), PersistentDataType.STRING, "AQUA");
             e.getWhoClicked().closeInventory();
             player.sendMessage(
@@ -36,7 +40,12 @@ public class ColorGui extends Gui {
                             "Aqua" + ChatColor.YELLOW + "!"
             );
         }));
-        addItem(1, new Icon(Material.BLACK_CONCRETE).setName(ChatColor.BLACK + "Black").onClick(e -> {
+
+        // Black
+        addItem(1, new Icon(Material.BLACK_CONCRETE).setName(ChatColor.BLACK + "Black").setLore(List.of(
+                "",
+                ChatColor.YELLOW + "Click to change to " + ChatColor.BLACK + "black" + ChatColor.YELLOW + "!"
+        )).onClick(e -> {
             data.set(new NamespacedKey(instance, "chatcolor"), PersistentDataType.STRING, "BLACK");
             e.getWhoClicked().closeInventory();
             player.sendMessage(
@@ -44,7 +53,12 @@ public class ColorGui extends Gui {
                             "Black" + ChatColor.YELLOW + "!"
             );
         }));
-        addItem(2, new Icon(Material.BLUE_CONCRETE).setName(ChatColor.BLUE + "Blue").onClick(e -> {
+
+        // Blue
+        addItem(2, new Icon(Material.BLUE_CONCRETE).setName(ChatColor.BLUE + "Blue").setLore(List.of(
+                "",
+                ChatColor.YELLOW + "Click to change to " + ChatColor.BLUE + "blue" + ChatColor.YELLOW + "!"
+        )).onClick(e -> {
             data.set(new NamespacedKey(instance, "chatcolor"), PersistentDataType.STRING, "BLUE");
             e.getWhoClicked().closeInventory();
             player.sendMessage(
@@ -52,7 +66,12 @@ public class ColorGui extends Gui {
                             "Blue" + ChatColor.YELLOW + "!"
             );
         }));
-        addItem(3, new Icon(Material.CYAN_WOOL).setName(ChatColor.DARK_AQUA + "Dark Aqua").onClick(e -> {
+
+        // Dark Aqua
+        addItem(3, new Icon(Material.CYAN_WOOL).setName(ChatColor.DARK_AQUA + "Dark Aqua").setLore(List.of(
+                "",
+                ChatColor.YELLOW + "Click to change to " + ChatColor.DARK_AQUA + "dark aqua" + ChatColor.YELLOW + "!"
+        )).onClick(e -> {
             data.set(new NamespacedKey(instance, "chatcolor"), PersistentDataType.STRING, "DARK_AQUA");
             e.getWhoClicked().closeInventory();
             player.sendMessage(
@@ -60,7 +79,12 @@ public class ColorGui extends Gui {
                             "Dark Aqua" + ChatColor.YELLOW + "!"
             );
         }));
-        addItem(4, new Icon(Material.BLUE_CONCRETE).setName(ChatColor.DARK_BLUE + "Dark Blue").onClick(e -> {
+
+        // Dark Blue
+        addItem(4, new Icon(Material.BLUE_CONCRETE).setName(ChatColor.DARK_BLUE + "Dark Blue").setLore(List.of(
+                "",
+                ChatColor.YELLOW + "Click to change to " + ChatColor.DARK_BLUE + "dark blue" + ChatColor.YELLOW + "!"
+        )).onClick(e -> {
             data.set(new NamespacedKey(instance, "chatcolor"), PersistentDataType.STRING, "DARK_BLUE");
             e.getWhoClicked().closeInventory();
             player.sendMessage(
@@ -68,7 +92,12 @@ public class ColorGui extends Gui {
                             "Dark Blue" + ChatColor.YELLOW + "!"
             );
         }));
-        addItem(5, new Icon(Material.GRAY_CONCRETE).setName(ChatColor.DARK_GRAY + "Dark Gray").onClick(e -> {
+
+        // Dark Gray
+        addItem(5, new Icon(Material.GRAY_CONCRETE).setName(ChatColor.DARK_GRAY + "Dark Gray").setLore(List.of(
+                "",
+                ChatColor.YELLOW + "Click to change to " + ChatColor.DARK_GRAY + "dark gray" + ChatColor.YELLOW + "!"
+        )).onClick(e -> {
             data.set(new NamespacedKey(instance, "chatcolor"), PersistentDataType.STRING, "DARK_GRAY");
             e.getWhoClicked().closeInventory();
             player.sendMessage(
@@ -76,7 +105,12 @@ public class ColorGui extends Gui {
                             "Dark Gray" + ChatColor.YELLOW + "!"
             );
         }));
-        addItem(6, new Icon(Material.GREEN_CONCRETE).setName(ChatColor.DARK_GREEN + "Dark Green").onClick(e -> {
+
+        // Dark Green
+        addItem(6, new Icon(Material.GREEN_CONCRETE).setName(ChatColor.DARK_GREEN + "Dark Green").setLore(List.of(
+                "",
+                ChatColor.YELLOW + "Click to change to " + ChatColor.DARK_GREEN + "dark green" + ChatColor.YELLOW + "!"
+        )).onClick(e -> {
             data.set(new NamespacedKey(instance, "chatcolor"), PersistentDataType.STRING, "DARK_GREEN");
             e.getWhoClicked().closeInventory();
             player.sendMessage(
@@ -84,7 +118,12 @@ public class ColorGui extends Gui {
                             "Dark Green" + ChatColor.YELLOW + "!"
             );
         }));
-        addItem(7, new Icon(Material.PURPLE_CONCRETE).setName(ChatColor.DARK_PURPLE + "Purple").onClick(e -> {
+
+        // Purple
+        addItem(7, new Icon(Material.PURPLE_CONCRETE).setName(ChatColor.DARK_PURPLE + "Purple").setLore(List.of(
+                "",
+                ChatColor.YELLOW + "Click to change to " + ChatColor.DARK_PURPLE + "purple" + ChatColor.YELLOW + "!"
+        )).onClick(e -> {
             data.set(new NamespacedKey(instance, "chatcolor"), PersistentDataType.STRING, "DARK_PURPLE");
             e.getWhoClicked().closeInventory();
             player.sendMessage(
@@ -92,7 +131,12 @@ public class ColorGui extends Gui {
                             "Dark Purple" + ChatColor.YELLOW + "!"
             );
         }));
-        addItem(8, new Icon(Material.RED_CONCRETE).setName(ChatColor.DARK_RED + "Dark Red").onClick(e -> {
+
+        // Dark Red
+        addItem(8, new Icon(Material.RED_CONCRETE).setName(ChatColor.DARK_RED + "Dark Red").setLore(List.of(
+                "",
+                ChatColor.YELLOW + "Click to change to " + ChatColor.DARK_RED + "dark red" + ChatColor.YELLOW + "!"
+        )).onClick(e -> {
             data.set(new NamespacedKey(instance, "chatcolor"), PersistentDataType.STRING, "DARK_RED");
             e.getWhoClicked().closeInventory();
             player.sendMessage(
@@ -100,7 +144,12 @@ public class ColorGui extends Gui {
                             "Dark Red" + ChatColor.YELLOW + "!"
             );
         }));
-        addItem(9, new Icon(Material.GOLD_BLOCK).setName(ChatColor.GOLD + "Gold").onClick(e -> {
+
+        // Gold
+        addItem(9, new Icon(Material.GOLD_BLOCK).setName(ChatColor.GOLD + "Gold").setLore(List.of(
+                "",
+                ChatColor.YELLOW + "Click to change to " + ChatColor.GOLD + "gold" + ChatColor.YELLOW + "!"
+        )).onClick(e -> {
             data.set(new NamespacedKey(instance, "chatcolor"), PersistentDataType.STRING, "GOLD");
             e.getWhoClicked().closeInventory();
             player.sendMessage(
@@ -108,7 +157,12 @@ public class ColorGui extends Gui {
                             "Gold" + ChatColor.YELLOW + "!"
             );
         }));
-        addItem(10, new Icon(Material.LIGHT_GRAY_CONCRETE).setName(ChatColor.GRAY + "Gray").onClick(e -> {
+
+        // Gray
+        addItem(10, new Icon(Material.LIGHT_GRAY_CONCRETE).setName(ChatColor.GRAY + "Gray").setLore(List.of(
+                "",
+                ChatColor.YELLOW + "Click to change to " + ChatColor.GRAY + "gray" + ChatColor.YELLOW + "!"
+        )).onClick(e -> {
             data.set(new NamespacedKey(instance, "chatcolor"), PersistentDataType.STRING, "GRAY");
             e.getWhoClicked().closeInventory();
             player.sendMessage(
@@ -116,14 +170,24 @@ public class ColorGui extends Gui {
                             "Gray" + ChatColor.YELLOW + "!"
             );
         }));
-        addItem(11, new Icon(Material.LIME_CONCRETE).setName(ChatColor.GREEN + "Green").onClick(e -> {
+
+        // Green
+        addItem(11, new Icon(Material.LIME_CONCRETE).setName(ChatColor.GREEN + "Green").setLore(List.of(
+                "",
+                ChatColor.YELLOW + "Click to change to " + ChatColor.GREEN + "green" + ChatColor.YELLOW + "!"
+        )).onClick(e -> {
             data.set(new NamespacedKey(instance, "chatcolor"), PersistentDataType.STRING, "GREEN");
             player.sendMessage(
                     PREFIX + ChatColor.YELLOW + "You have set your chat color to " + ChatColor.GREEN +
                             "Green" + ChatColor.YELLOW + "!"
             );
         }));
-        addItem(12, new Icon(Material.PINK_CONCRETE).setName(ChatColor.LIGHT_PURPLE + "Pink").onClick(e -> {
+
+        // Pink
+        addItem(12, new Icon(Material.PINK_CONCRETE).setName(ChatColor.LIGHT_PURPLE + "Pink").setLore(List.of(
+                "",
+                ChatColor.YELLOW + "Click to change to " + ChatColor.LIGHT_PURPLE + "pink" + ChatColor.YELLOW + "!"
+        )).onClick(e -> {
             data.set(new NamespacedKey(instance, "chatcolor"), PersistentDataType.STRING, "LIGHT_PURPLE");
             e.getWhoClicked().closeInventory();
             player.sendMessage(
@@ -131,7 +195,12 @@ public class ColorGui extends Gui {
                             "Pink" + ChatColor.YELLOW + "!"
             );
         }));
-        addItem(13, new Icon(Material.RED_WOOL).setName(ChatColor.RED + "Red").onClick(e -> {
+
+        // Red
+        addItem(13, new Icon(Material.RED_WOOL).setName(ChatColor.RED + "Red").setLore(List.of(
+                "",
+                ChatColor.YELLOW + "Click to change to " + ChatColor.RED + "red" + ChatColor.YELLOW + "!"
+        )).onClick(e -> {
             data.set(new NamespacedKey(instance, "chatcolor"), PersistentDataType.STRING, "RED");
             e.getWhoClicked().closeInventory();
             player.sendMessage(
@@ -139,7 +208,12 @@ public class ColorGui extends Gui {
                             "Red" + ChatColor.YELLOW + "!"
             );
         }));
-        addItem(14, new Icon(Material.WHITE_CONCRETE).setName(ChatColor.WHITE + "White").onClick(e -> {
+
+        // White
+        addItem(14, new Icon(Material.WHITE_CONCRETE).setName(ChatColor.WHITE + "White").setLore(List.of(
+                "",
+                ChatColor.YELLOW + "Click to change to " + ChatColor.WHITE + "white" + ChatColor.YELLOW + "!"
+        )).onClick(e -> {
             data.set(new NamespacedKey(instance, "chatcolor"), PersistentDataType.STRING, "WHITE");
             e.getWhoClicked().closeInventory();
             player.sendMessage(
@@ -147,7 +221,12 @@ public class ColorGui extends Gui {
                             "White" + ChatColor.YELLOW + "!"
             );
         }));
-        addItem(15, new Icon(Material.YELLOW_CONCRETE).setName(ChatColor.YELLOW + "Yellow").onClick(e -> {
+
+        // Yellow
+        addItem(15, new Icon(Material.YELLOW_CONCRETE).setName(ChatColor.YELLOW + "Yellow").setLore(List.of(
+                "",
+                ChatColor.YELLOW + "Click to change to " + ChatColor.YELLOW + "yellow" + ChatColor.YELLOW + "!"
+        )).onClick(e -> {
             data.set(new NamespacedKey(instance, "chatcolor"), PersistentDataType.STRING, "YELLOW");
             e.getWhoClicked().closeInventory();
             player.sendMessage(
