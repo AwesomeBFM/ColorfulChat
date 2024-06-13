@@ -19,7 +19,7 @@ package dev.awesomebfm.colorfulchat;
 import dev.awesomebfm.colorfulchat.command.ChatColorCommand;
 import dev.awesomebfm.colorfulchat.listener.ChatListener;
 import dev.awesomebfm.colorfulchat.listener.JoinListener;
-import me.kodysimpson.simpapi.menu.MenuManager;
+import mc.obliviate.inventory.InventoryAPI;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.PluginCommand;
@@ -43,7 +43,7 @@ public final class ColorfulChat extends JavaPlugin {
         saveDefaultConfig();
         defaultColor = ChatColor.valueOf(getConfig().getString("default-color"));
         // Setup menu manager
-        MenuManager.setup(getServer(), this);
+        new InventoryAPI(instance).init();
 
         // Register listeners
         getServer().getPluginManager().registerEvents(new JoinListener(this), this);

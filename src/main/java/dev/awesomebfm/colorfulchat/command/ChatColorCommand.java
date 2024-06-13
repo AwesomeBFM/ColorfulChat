@@ -17,10 +17,7 @@
 package dev.awesomebfm.colorfulchat.command;
 
 import dev.awesomebfm.colorfulchat.ColorfulChat;
-import dev.awesomebfm.colorfulchat.menu.ColorMenu;
-import me.kodysimpson.simpapi.exceptions.MenuManagerException;
-import me.kodysimpson.simpapi.exceptions.MenuManagerNotSetupException;
-import me.kodysimpson.simpapi.menu.MenuManager;
+import dev.awesomebfm.colorfulchat.menu.ColorGui;
 import org.bukkit.ChatColor;
 import org.bukkit.NamespacedKey;
 import org.bukkit.command.Command;
@@ -47,11 +44,7 @@ public class ChatColorCommand implements CommandExecutor {
         }
 
         if (args.length < 1) {
-            try {
-                MenuManager.openMenu(ColorMenu.class, p);
-            } catch (MenuManagerException | MenuManagerNotSetupException e) {
-                p.sendMessage(PREFIX + ChatColor.RED + "ERROR: Something went wrong while opening the menu!");
-            }
+            new ColorGui(p).open();
             return true;
         }
 
@@ -73,15 +66,12 @@ public class ChatColorCommand implements CommandExecutor {
             case "green" -> data.set(key, PersistentDataType.STRING, "GREEN");
             case "aqua" -> data.set(key, PersistentDataType.STRING, "AQUA");
             case "red" -> data.set(key, PersistentDataType.STRING, "RED");
-            case "pink" -> data.set(key, PersistentDataType.STRING, "LIGHT_PURPLE"); // 'pink' is not available in ChatColor, using LIGHT_PURPLE instead
+            case "pink" ->
+                    data.set(key, PersistentDataType.STRING, "LIGHT_PURPLE"); // 'pink' is not available in ChatColor, using LIGHT_PURPLE instead
             case "yellow" -> data.set(key, PersistentDataType.STRING, "YELLOW");
             case "white" -> data.set(key, PersistentDataType.STRING, "WHITE");
             default -> {
-                try {
-                    MenuManager.openMenu(ColorMenu.class, p);
-                } catch (MenuManagerException | MenuManagerNotSetupException e) {
-                    p.sendMessage(PREFIX + ChatColor.RED + "ERROR: Something went wrong while opening the menu!");
-                }
+                new ColorGui(p).open();
                 return true;
             }
         }
