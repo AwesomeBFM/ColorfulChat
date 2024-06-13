@@ -82,9 +82,6 @@ public class ChatColorCommand implements CommandExecutor {
             }
         }
 
-        if (args[0].equalsIgnoreCase("pink")) {
-            args[0] = "light_purple";
-        }
         p.sendMessage(PREFIX + ChatColor.GREEN + "Your chat color has been successfully changed to " + ChatColor.valueOf(args[0].toUpperCase()) + args[0] + ChatColor.GREEN + "!");
         return true;
     }
