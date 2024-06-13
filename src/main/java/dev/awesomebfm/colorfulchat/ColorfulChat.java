@@ -42,6 +42,7 @@ public final class ColorfulChat extends JavaPlugin {
         // Load config
         saveDefaultConfig();
         defaultColor = ChatColor.valueOf(getConfig().getString("default-color"));
+
         // Setup menu manager
         new InventoryAPI(instance).init();
 
@@ -72,11 +73,6 @@ public final class ColorfulChat extends JavaPlugin {
             }
         }
 
-    }
-
-    @Override
-    public void onDisable() {
-        // Plugin shutdown logic
     }
 
     public static String getPrefix() {
