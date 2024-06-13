@@ -58,7 +58,7 @@ public final class ColorfulChat extends JavaPlugin {
         command.setExecutor(new ChatColorCommand(this));
 
         // Run updater
-        if (getConfig().getBoolean("updater")) {
+        if (getConfig().getBoolean("enable-update-checker")) {
             Updater updater = new Updater("2.0.1");
             try {
                 if (updater.shouldUpdate()) {
