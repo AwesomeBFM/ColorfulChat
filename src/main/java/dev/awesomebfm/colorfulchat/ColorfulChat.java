@@ -60,7 +60,7 @@ public final class ColorfulChat extends JavaPlugin {
 
         // Run updater
         if (getConfig().getBoolean("enable-update-checker")) {
-            Updater updater = new Updater("2.0.1");
+            Updater updater = new Updater("2.1");
             try {
                 if (updater.shouldUpdate()) {
                     Bukkit.getLogger().log(Level.WARNING, "A newer version of Colorful Chat is available! Head over " +
